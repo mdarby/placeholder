@@ -5,9 +5,9 @@ begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
     gem.name = "placeholder"
-    gem.summary = %Q{TODO: one-line summary of your gem}
-    gem.description = %Q{TODO: longer description of your gem}
-    gem.email = "matt@matt-darby.com"
+    gem.summary = "Easy image placeholders via Placehold.it"
+    gem.description = "Easy image placeholders via Placehold.it"
+    gem.email = "matt@protectedmethod.com"
     gem.homepage = "http://github.com/mdarby/placeholder"
     gem.authors = ["Matt Darby"]
     gem.add_development_dependency "rspec", ">= 1.2.9"
