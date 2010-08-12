@@ -10,6 +10,10 @@ How To Install
 --------------
 Install the gem: `[sudo] gem install placeholder`
 
+If you're using Rails, add `config.gem 'placeholder'` to your `config/environment.rb`.
+
+If you're using Sinatra, add `require 'placeholder'` to your main application file.
+
 Usage
 -----
 Placeholder requires a size as the first argument and can accept `:text`, `:fg_color` and `:bg_color` arguments.
