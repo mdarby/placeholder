@@ -2,16 +2,21 @@ class Placeholder
 
   attr_accessor :size, :height, :width, :bg_color, :fg_color, :text
 
-  def initialize(options = {})
-    options.each_pair do |k,v|
-      instance_variable_set "@#{k}", v
+  def initialize(size, options = {})
+    measure(size)
+    options.each{|(k,v)| instance_variable_set("@#{k}", v)}
+  end
+
+  def measure(size)
+    if size =~ /\d+x\d+/
+      @width, @height = size.split("x").map{|s| s.to_i}
+    else
+      @width, @height = size.to_i, size.to_i
     end
-    
-    @text.gsub!(" ", "+") unless @text == nil
   end
 
   def to_s
-    "<img src=\"#{url}\" alt=\"placeholder\"></img>"
+    "<img src=\"#{url}\" alt=\"placeholder\" />"
   end
 
   def url
@@ -19,11 +24,12 @@ class Placeholder
   end
 
   def size_str
-    @size != nil ? @size : "#{@width}x#{@height}"
+    "#{@width}x#{@height}"
   end
 
   def text_str
-    @text != nil ? "&text=#{@text}" : ""
+    return "" if @text == nil
+    "&text=" + @text.gsub(" ", "+")
   end
 
   def color_str
