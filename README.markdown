@@ -12,11 +12,17 @@ Install the gem: `[sudo] gem install placeholder`
 
 Usage
 -----
-Placeholder requires a `:size` attribute, and can accept `:text`, `:height` and `:width` and even `:fg_color` and `:bg_color`
+Placeholder requires a size as the first argument and can accept `:text`, `:fg_color` and `:bg_color` arguments.
 
-This will place a 300x300 image placeholder into your page with the text "Whoa Now". The default text is just the image size.
+Examples
+--------
+This will place a 200x300 image placeholder into your page with the text "Whoa Now". The default text is the image size.
 
-`= Placeholder.new(:size => 300, :text => "Whoa Now")`
+`= Placeholder.new("200x300", :text => "Whoa Now")`
+
+If you just need a square image, simply do:
+
+`= Placeholder.new(100)`
 
 About the Author
 ----------------
