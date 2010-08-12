@@ -1,6 +1,6 @@
 class Placeholder
 
-  attr_accessor :size, :height, :width, :bg_color, :fg_color, :text
+  attr_accessor :height, :width, :bg_color, :fg_color, :text
 
   def initialize(size, options = {})
     measure(size)
