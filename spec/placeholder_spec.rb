@@ -12,9 +12,19 @@ describe "Placeholder" do
     p.to_s.should == "<img src=\"http://placehold.it/200x300\" alt=\"placeholder\" />"
   end
 
-  it "should know about a color" do
+  it "should know about a bg_color" do
+    p = Placeholder.new(400, :bg_color => "FFFFFF")
+    p.to_s.should == "<img src=\"http://placehold.it/400x400/FFFFFF\" alt=\"placeholder\" />"
+  end
+
+  it "should know about a fg_color" do
     p = Placeholder.new(400, :bg_color => "FFFFFF", :fg_color => "FE0000")
     p.to_s.should == "<img src=\"http://placehold.it/400x400/FFFFFF/FE0000\" alt=\"placeholder\" />"
+  end
+
+  it "should alert the user if they set :fg_color and not :bg_color" do
+    p = Placeholder.new(400, :fg_color => "FE0000")
+    p.to_s.should == "<img src=\"http://placehold.it/400x400/FE0000&text=Set+:bg_color+when+using+:fg_color\" alt=\"placeholder\" />"
   end
 
   it "should know about its text" do

@@ -33,7 +33,14 @@ class Placeholder
   end
 
   def color_str
-    (@bg_color != nil && @fg_color != nil) ? "/#{@bg_color}/#{@fg_color}" : ""
+    if @bg_color.nil? && @fg_color != nil
+      @text = "Set :bg_color when using :fg_color"
+    end
+
+    str = ""
+    str += "/#{@bg_color}" unless @bg_color.nil?
+    str += "/#{@fg_color}" unless @fg_color.nil?
+    str
   end
 
 end
