@@ -30,7 +30,7 @@ If you just need a square image, simply do:
 
 You can also pass CSS classes and an ID if you'd like:
 
-`= Placeholder.new(80, :css_id => "gravatar", :css_classes => "active admin")`
+`= Placeholder.new(80, :id => "gravatar", :class => "active admin")`
 
 About the Author
 ----------------

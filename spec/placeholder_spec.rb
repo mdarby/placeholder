@@ -37,12 +37,12 @@ describe "Placeholder" do
   end
 
   it "should allow css_classes" do
-    p = Placeholder.new(300, :css_classes => "c1 c2")
+    p = Placeholder.new(300, :class => "c1 c2")
     p.to_s.should == "<img src=\"http://placehold.it/300x300\" alt=\"placeholder\" class=\"c1 c2\" />"
   end
 
   it "should allow css_id" do
-    p = Placeholder.new(300, :css_id => "gravatar")
+    p = Placeholder.new(300, :id => "gravatar")
     p.to_s.should == "<img src=\"http://placehold.it/300x300\" alt=\"placeholder\" id=\"gravatar\" />"
   end
 

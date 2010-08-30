@@ -1,6 +1,6 @@
 class Placeholder
 
-  attr_accessor :height, :width, :bg_color, :fg_color, :text, :css_classes, :css_id
+  attr_accessor :height, :width, :bg_color, :fg_color, :text, :class, :id
 
   def initialize(size, options = {})
     measure(size)
@@ -46,8 +46,8 @@ class Placeholder
 
   def css_stuff
     str = ""
-    str += "class=\"#{@css_classes}\"" unless @css_classes.nil?
-    str += "id=\"#{@css_id}\"" unless @css_id.nil?
+    str += "class=\"#{@class}\"" unless @class.nil?
+    str += "id=\"#{@id}\"" unless @id.nil?
     str
   end
 
