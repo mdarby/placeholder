@@ -1,6 +1,6 @@
 class Placeholder
 
-  attr_accessor :height, :width, :bg_color, :fg_color, :text
+  attr_accessor :height, :width, :bg_color, :fg_color, :text, :css_classes, :css_id
 
   def initialize(size, options = {})
     measure(size)
@@ -16,7 +16,7 @@ class Placeholder
   end
 
   def to_s
-    str = "<img src=\"#{url}\" alt=\"placeholder\" />"
+    str = "<img src=\"#{url}\" alt=\"placeholder\" #{css_stuff} />"
     str.html_safe rescue str #Rails 3 sanitizes our little string.
   end
 
@@ -41,6 +41,13 @@ class Placeholder
     str = ""
     str += "/#{@bg_color}" unless @bg_color.nil?
     str += "/#{@fg_color}" unless @fg_color.nil?
+    str
+  end
+
+  def css_stuff
+    str = ""
+    str += "class=\"#{@css_classes}\"" unless @css_classes.nil?
+    str += "id=\"#{@css_id}\"" unless @css_id.nil?
     str
   end
 

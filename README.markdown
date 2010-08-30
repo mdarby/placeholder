@@ -28,6 +28,10 @@ If you just need a square image, simply do:
 
 `= Placeholder.new(100)`
 
+You can also pass CSS classes and an ID if you'd like:
+
+`= Placeholder.new(80, :css_id => "gravatar", :css_classes => "active admin")`
+
 About the Author
 ----------------
 My name is [Matt Darby.](http://matt-darby.com) I’m a Partner and co-founder of [Protected Method LLC](http://www.protectedmethod.com) and hold a Master’s Degree in Computer Science from [Franklin University](http://www.franklin.edu) in sunny [Columbus, OH.](http://en.wikipedia.org/wiki/Columbus,_Ohio)
