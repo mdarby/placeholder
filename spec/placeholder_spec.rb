@@ -36,4 +36,18 @@ describe "Placeholder" do
     lambda{ Placeholder.new }.should raise_error
   end
 
+  context "in Rails 3" do
+    before do
+      class String
+        def html_safe; "safe!" end
+      end
+    end
+
+    it "should sanitize :to_s in Rails3" do
+      p = Placeholder.new(300)
+      p.to_s.should == "safe!"
+    end
+
+  end
+
 end

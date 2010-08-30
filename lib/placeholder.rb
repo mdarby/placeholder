@@ -16,7 +16,8 @@ class Placeholder
   end
 
   def to_s
-    "<img src=\"#{url}\" alt=\"placeholder\" />"
+    str = "<img src=\"#{url}\" alt=\"placeholder\" />"
+    str.html_safe rescue str #Rails 3 sanitizes our little string.
   end
 
   def url
